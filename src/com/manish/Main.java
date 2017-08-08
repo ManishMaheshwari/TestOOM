@@ -4,13 +4,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class
+
+Main {
 
     public static void main(String[] args) {
 
         Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
-            System.out.format("Caught {}, from ThreadId {}. This message printed by: {} %n",
-                    throwable.getClass(), thread.getId(), Thread.currentThread().getId());
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>Caught OOM from ThreadId " + thread.getId() +
+                    " This message printed by: " + Thread.currentThread().getId());
+
+//            System.out.format("Caught {}, from ThreadId {}. This message printed by: {} %n",
+//                    throwable.getClass(), thread.getId(), Thread.currentThread().getId());
 
         });
 
